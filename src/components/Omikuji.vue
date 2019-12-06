@@ -47,7 +47,7 @@ export default class Omikuji extends Vue {
   number: number = 1
 
   get src(): string {
-    return `/img/${this.result}_${this.number}.png`
+    return `./img/${this.result}_${this.number}.png`
   }
 
   getResult(): void {
