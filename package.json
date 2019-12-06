@@ -2,10 +2,12 @@
   "name": "neko-omikuji",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://poipoisaurus.github.io/neko-omikuji/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^2.6.10",
@@ -22,6 +24,7 @@
     "@vue/eslint-config-typescript": "^4.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "gh-pages": "^2.1.1",
     "typescript": "~3.5.3",
     "vue-template-compiler": "^2.6.10"
   }
