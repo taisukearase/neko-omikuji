@@ -15,14 +15,13 @@
       :is-active="isLightboxActive"
       :src="src"
       :result="resultList[result]"
-      @lightbox-close="onLighboxClose" />
+      @lightbox-close="onLightboxClose" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import Lightbox from './Lightbox.vue'
-
 
 @Component({
   components: {
@@ -30,6 +29,7 @@ import Lightbox from './Lightbox.vue'
   },
 })
 export default class Omikuji extends Vue {
+  // data
   isLightboxActive: boolean = false
 
   resultList: {} = {
@@ -46,10 +46,12 @@ export default class Omikuji extends Vue {
 
   number: number = 1
 
+  // computed
   get src(): string {
     return `./img/${this.result}_${this.number}.png`
   }
 
+  // methods
   getResult(): void {
     const keys = Object.keys(this.resultList)
     this.result = keys[Math.floor(Math.random() * keys.length)]
@@ -61,7 +63,7 @@ export default class Omikuji extends Vue {
     this.isLightboxActive = true
   }
 
-  onLighboxClose(): void {
+  onLightboxClose(): void {
     this.isLightboxActive = false
   }
 }
